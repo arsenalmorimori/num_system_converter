@@ -5,6 +5,8 @@ const  input_1 = document.getElementsByTagName("input")[0]
 const  input_2 = document.getElementsByTagName("input")[1]
 const  button_ = document.getElementsByClassName("convert_btn")[0]
 const  answer = document.getElementsByTagName("h2")[0]
+const  span = document.getElementsByTagName("span")[0]
+
 
 // -------------------- LOAD --------------------
 function state_(){
@@ -56,21 +58,27 @@ button_.addEventListener("click", function(){
       switch(state){
         case 1:
             decimal_binary(input_1.value)
+            span.innerHTML = "2"
         break;
         case 2:
             decimal_octal(input_1.value)
+            span.innerHTML = "8"
         break;
         case 3:
             decimal_hexa(input_1.value)
+            span.innerHTML = "16"
         break;
         case 4:
             binary_decimal(input_2.value)
+            span.innerHTML = "10"
         break;
         case 5:
             binary_octal(input_2.value)
+            span.innerHTML = "8"
         break;
         case 6:
             binary_hexa(input_2.value)
+            span.innerHTML = "16"
         break;
     }
 })

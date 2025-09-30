@@ -10,6 +10,9 @@
     --black : #2f2f32;
     --white : #f1f1ff;
 }
+* {
+  -webkit-tap-highlight-color: transparent; /* Removes gray highlight */
+}
 
 
 html,body,input, a, p,h1,h2,h3,textarea,h4,h5,h6,button, ul,ol,li{
@@ -50,6 +53,10 @@ input::-webkit-inner-spin-button {
     width: 100vw;
     height: 100vh;
 }
+.page_container .page_wrapper img{
+    width: 10rem;
+    margin-bottom: 3rem;
+}
 .page_container .page_wrapper button{
     width: 50rem;
     font-size: 1rem;
@@ -79,6 +86,10 @@ input::-webkit-inner-spin-button {
     gap: 1rem;
     width: 100vw;
     height: 100vh;
+}
+.convert_container .convert_wrapper div{
+    display: flex;
+    align-items: end;
 }
  .convert_container .convert_wrapper .convert_btn{
     background-color: var(--blue);
@@ -116,6 +127,14 @@ h1{
 h2{
     color: var(--blue);
     font-size: 2rem;
+    margin-top: 0rem;
+}
+span{
+    color: var(--blue);
+    height: 1.4rem;
+    margin-left: 0.3rem;
+    opacity: 0.5;
+    font-size: 1rem;
     margin-top: 0rem;
 }
 h3{
