@@ -3,6 +3,7 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/convert.html',
+  '/icons/ncs_logo.png',
   '/index.js',
   '/convert.js',
   '/css.css',
