@@ -7,6 +7,7 @@
     --low_blue : #686868;
     --blue : #8d79ff;
     --black_light : #4c4c52;
+    --dark : #343437;
     --black : #2f2f32;
     --white : #f1f1ff;
 }
@@ -57,18 +58,25 @@ input::-webkit-inner-spin-button {
     width: 10rem;
     margin-bottom: 3rem;
 }
+.page_container .page_wrapper div{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
 .page_container .page_wrapper button{
-    width: 50rem;
+    width: 3rem;
+    height: 3rem;
     font-size: 1rem;
-    background-color: transparent;
+    background-color: var(--dark);
+    border-radius: 0.5rem;
+    
     color: var(--low_blue);
     cursor: pointer;
     transition: 0.5s;
 }
 .page_container .page_wrapper button:hover{
-    width: 50rem;
-    font-size: 1.5rem;
-    background-color: transparent;
+    background-color: var(--dark);
+    border-radius: 0.5rem;
     color: var(--blue);
     cursor: pointer;
     transition: 0.5s;
@@ -89,7 +97,19 @@ input::-webkit-inner-spin-button {
 }
 .convert_container .convert_wrapper div{
     display: flex;
-    align-items: end;
+    width: 20rem;
+    flex-direction: column;
+    align-items: start;
+}
+.convert_container .convert_wrapper .ans_container{
+    margin-bottom: 2rem;
+}
+.convert_container .convert_wrapper span{
+    color: var(--low_blue);
+    width: 20rem;
+}
+.convert_container .convert_wrapper div span{
+    color: var(--low_blue);
 }
  .convert_container .convert_wrapper .convert_btn{
     background-color: var(--blue);
@@ -119,7 +139,6 @@ input{
     padding: 1rem 2rem;
     border-radius: 1rem;
     width: 16rem;
-    margin-top: 4rem;
 }
 h1{
     color: var(--white);

@@ -3,85 +3,83 @@ console.log("STATE = " + state)
 const  h1 = document.getElementsByTagName("h1")[0]
 const  input_1 = document.getElementsByTagName("input")[0]
 const  input_2 = document.getElementsByTagName("input")[1]
-const  button_ = document.getElementsByClassName("convert_btn")[0]
+// const  button_ = document.getElementsByClassName("convert_btn")[0]
 const  answer = document.getElementsByTagName("h2")[0]
 const  span = document.getElementsByTagName("span")[0]
 
 
 // -------------------- LOAD --------------------
-function state_(){
-    switch(state){
-        case 1:
-            console.log("deci -> binary")
-            h1.innerHTML = "deci -> binary"
-            input_2.style.display = "none"
-        break;
-        case 2:
-            console.log("deci -> octal")
-            h1.innerHTML = "deci -> octal"
-            input_2.style.display = "none"
-        break;
-        case 3:
-            console.log("deci -> hexa")
-            h1.innerHTML = "deci -> hexa"
-            input_2.style.display = "none"
-        break;
-        case 4:
-            console.log("binary -> deci")
-            h1.innerHTML = "binary -> deci"
-            input_1.style.display = "none"
-        break;
-        case 5:
-            console.log("binary -> octal")
-            h1.innerHTML = "binary -> octal"
-            input_1.style.display = "none"
-        break;
-        case 6:
-            console.log("binary -> hexa")
-            h1.innerHTML = "binary -> hexa"
-            input_1.style.display = "none"
-        break;
-        case 0:
-            console.log("home")
-        break;
-    }
-} 
-state_()
-
+// function state_(){
+//     switch(state){
+//         case 1:
+//             console.log("deci -> binary")
+//             h1.innerHTML = "deci -> binary"
+//             input_2.style.display = "none"
+//         break;
+//         case 2:
+//             console.log("deci -> octal")
+//             h1.innerHTML = "deci -> octal"
+//             input_2.style.display = "none"
+//         break;
+//         case 3:
+//             console.log("deci -> hexa")
+//             h1.innerHTML = "deci -> hexa"
+//             input_2.style.display = "none"
+//         break;
+//         case 4:
+//             console.log("binary -> deci")
+//             h1.innerHTML = "binary -> deci"
+//             input_1.style.display = "none"
+//         break;
+//         case 5:
+//             console.log("binary -> octal")
+//             h1.innerHTML = "binary -> octal"
+//             input_1.style.display = "none"
+//         break;
+//         case 6:
+//             console.log("binary -> hexa")
+//             h1.innerHTML = "binary -> hexa"
+//             input_1.style.display = "none"
+//         break;
+//         case 0:
+//             console.log("home")
+//         break;
+//     }
+// } 
 
 
 
 
 // -------------------- INTERACTION --------------------
-button_.addEventListener("click", function(){
-    console.log("clicked")
-      switch(state){
-        case 1:
-            decimal_binary(input_1.value)
-            span.innerHTML = "2"
-        break;
-        case 2:
-            decimal_octal(input_1.value)
-            span.innerHTML = "8"
-        break;
-        case 3:
-            decimal_hexa(input_1.value)
-            span.innerHTML = "16"
-        break;
-        case 4:
-            binary_decimal(input_2.value)
-            span.innerHTML = "10"
-        break;
-        case 5:
-            binary_octal(input_2.value)
-            span.innerHTML = "8"
-        break;
-        case 6:
-            binary_hexa(input_2.value)
-            span.innerHTML = "16"
-        break;
-    }
-})
+// button_.addEventListener("click", function(){
+//     console.log("clicked")
+//       switch(state){
+//         case 1:
+//             decimal_binary(input_1.value)
+//             span.innerHTML = "2"
+//         break;
+//         case 2:
+//             decimal_octal(input_1.value)
+//             span.innerHTML = "8"
+//         break;
+//         case 3:
+//             decimal_hexa(input_1.value)
+//             span.innerHTML = "16"
+//         break;
+//         case 4:
+//             binary_decimal(input_2.value)
+//             span.innerHTML = "10"
+//         break;
+//         case 5:
+//             binary_octal(input_2.value)
+//             span.innerHTML = "8"
+//         break;
+//         case 6:
+//             binary_hexa(input_2.value)
+//             span.innerHTML = "16"
+//         break;
+//     }
+// })
 
 
 
@@ -436,8 +434,13 @@ function binary_hexa(val){
 
 }
 
+function octal_binary(val){
+    // decimal_binary(val)
+    let test = val
+    console.log("jgfghg"+test)
+}
 
-
+state()
 // deci_binary(243)
 // decimal_octal(512)
 // decimal_hexa(1174372330)
@@ -445,3 +448,4 @@ function binary_hexa(val){
 // binary_decimal("1010101011")
 // binary_octal("1001101")
 // binary_hexa("100110111001")
+octal_binary(273)
