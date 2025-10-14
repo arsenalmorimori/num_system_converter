@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NCS - Convert</title>
     <link rel="stylesheet" href="css.css"/>
-    
     <link rel="icon" type="image/png" href="./icons/ncs_logo.png">
 </head>
 <body>
@@ -18,17 +17,17 @@
         <div class="convert_wrapper">
                     <div class="ans_container">
                         <!-- <h2>Answer...</h2><span></span> -->
-                        <div class="a1"><span>decimal</span><h2>-----------</h2><span></span></div>
-                        <div class="a2"><span>binary</span><h2>-----------</h2><span></span></div>
-                        <div class="a3"><span>octal</span><h2>---</h2><span></span></div>
-                        <div class="a4"><span>haxa</span><h2>----</h2><span></span></div>
+                        <div class="ans_con"><span>decimal</span><div><h2>-----------</h2><span class="label"></span></div></div>
+                        <div class="ans_con"><span>binary</span><div><h2>-----------</h2><span class="label"></span></div></div>
+                        <div class="ans_con"><span>octal</span><div><h2>---</h2><span class="label"></span></div></div>
+                        <div class="ans_con"><span>haxa</span><div><h2>----</h2><span class="label"></span></div></div>
                     </div>
                         
-                    <span>// click answer for solution</span>
-                    <input placeholder="123..." type="number"/>
-                    <!-- <input placeholder="10100101..." type="text"/> -->
+                    <!-- <span>// click answer for solution</span> -->
+                    <input placeholder="123..." pattern="[01]*"/>
+                    <input placeholder="ABCDEF..." type="text"/>
                     <button class="convert_btn">Convert</button>
-                   <h1 class="title">Decimal</h1>
+                   <h1 class="title">------</h1>
 
                     <a href="index.html"><h3>Back</h3></a>
         </div>

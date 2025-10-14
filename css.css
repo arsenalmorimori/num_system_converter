@@ -104,10 +104,19 @@ input::-webkit-inner-spin-button {
 .convert_container .convert_wrapper .ans_container{
     margin-bottom: 2rem;
 }
-.convert_container .convert_wrapper span{
+.convert_container .convert_wrapper .ans_container .ans_con div{
+    display: flex;
+    flex-direction: row;
+}
+.convert_container .convert_wrapper .ans_container .ans_con .label{
+    height: 2rem;
+    align-content: end;
+    color: var(--blue);
+}
+/* .convert_container .convert_wrapper span{
     color: var(--low_blue);
     width: 20rem;
-}
+} */
 .convert_container .convert_wrapper div span{
     color: var(--low_blue);
 }

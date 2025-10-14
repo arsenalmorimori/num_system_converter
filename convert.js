@@ -1,85 +1,88 @@
 let state = parseInt(localStorage.getItem("state"))
 console.log("STATE = " + state)
-const  h1 = document.getElementsByTagName("h1")[0]
+const  h1 = document.getElementsByClassName("title")[0]
 const  input_1 = document.getElementsByTagName("input")[0]
 const  input_2 = document.getElementsByTagName("input")[1]
-// const  button_ = document.getElementsByClassName("convert_btn")[0]
+const  button_ = document.getElementsByClassName("convert_btn")[0]
 const  answer = document.getElementsByTagName("h2")[0]
 const  span = document.getElementsByTagName("span")[0]
+const  label_2 = document.getElementsByClassName("label")[0]
+const  label_8 = document.getElementsByClassName("label")[1]
+const  label_10 = document.getElementsByClassName("label")[2]
+const  label_16 = document.getElementsByClassName("label")[3]
+const  ans_con1 = document.getElementsByClassName("ans_con")[0]
+const  ans_con2 = document.getElementsByClassName("ans_con")[1]
+const  ans_con3 = document.getElementsByClassName("ans_con")[2]
+const  ans_con4 = document.getElementsByClassName("ans_con")[3]
+const  h2_1 = document.getElementsByTagName("h2")[0]
+const  h2_2 = document.getElementsByTagName("h2")[1]
+const  h2_3 = document.getElementsByTagName("h2")[2]
+const  h2_4 = document.getElementsByTagName("h2")[3]
 
 
 // -------------------- LOAD --------------------
-// function state_(){
-//     switch(state){
-//         case 1:
-//             console.log("deci -> binary")
-//             h1.innerHTML = "deci -> binary"
-//             input_2.style.display = "none"
-//         break;
-//         case 2:
-//             console.log("deci -> octal")
-//             h1.innerHTML = "deci -> octal"
-//             input_2.style.display = "none"
-//         break;
-//         case 3:
-//             console.log("deci -> hexa")
-//             h1.innerHTML = "deci -> hexa"
-//             input_2.style.display = "none"
-//         break;
-//         case 4:
-//             console.log("binary -> deci")
-//             h1.innerHTML = "binary -> deci"
-//             input_1.style.display = "none"
-//         break;
-//         case 5:
-//             console.log("binary -> octal")
-//             h1.innerHTML = "binary -> octal"
-//             input_1.style.display = "none"
-//         break;
-//         case 6:
-//             console.log("binary -> hexa")
-//             h1.innerHTML = "binary -> hexa"
-//             input_1.style.display = "none"
-//         break;
-//         case 0:
-//             console.log("home")
-//         break;
-//     }
-// } 
+function state_(){
+    switch(state){
+        case 1:
+            console.log("binary")
+            h1.innerHTML = "Binary"
+            input_2.style.display = "none"
+            ans_con1.style.display = "none"
+        break;
+        case 2:
+            console.log("octal")
+            h1.innerHTML = "Octal"
+            input_2.style.display = "none"
+            ans_con2.style.display = "none"
+        break;
+        case 3:
+            console.log("decimal")
+            h1.innerHTML = "Decimal"
+            input_2.style.display = "none"
+            ans_con3.style.display = "none"
+        break;
+        case 4:
+            console.log("hexadecimal")
+            h1.innerHTML = "Hexadecimal"
+            input_1.style.display = "none"
+            ans_con4.style.display = "none"
+        break;
+    }
+} 
 
 
 
 
 // -------------------- INTERACTION --------------------
-// button_.addEventListener("click", function(){
-//     console.log("clicked")
-//       switch(state){
-//         case 1:
-//             decimal_binary(input_1.value)
-//             span.innerHTML = "2"
-//         break;
-//         case 2:
-//             decimal_octal(input_1.value)
-//             span.innerHTML = "8"
-//         break;
-//         case 3:
-//             decimal_hexa(input_1.value)
-//             span.innerHTML = "16"
-//         break;
-//         case 4:
-//             binary_decimal(input_2.value)
-//             span.innerHTML = "10"
-//         break;
-//         case 5:
-//             binary_octal(input_2.value)
-//             span.innerHTML = "8"
-//         break;
-//         case 6:
-//             binary_hexa(input_2.value)
-//             span.innerHTML = "16"
-//         break;
-//     }
-// })
+button_.addEventListener("click", function(){
+    console.log("clicked")
+      switch(state){
+        case 1:
+            binary_decimal(input_1.value)
+            binary_octal(input_1.value)
+            binary_hexa(input_1.value)
+            label_8.innerHTML = "8"
+            label_10.innerHTML = "10"
+            label_16.innerHTML = "16"
+        break;
+        case 2:
+            decimal_octal(input_1.value)
+            label_8.innerHTML = "8"
+        break;
+        case 3:
+            decimal_binary(input_1.value)
+            decimal_octal(input_1.value)
+            decimal_hexa(input_1.value)
+            label_2.innerHTML = "2"
+            label_8.innerHTML = "8"
+            label_16.innerHTML = "16"
+        break;
+        case 4:
+            binary_decimal(input_2.value)
+            span.innerHTML = "10"
+        break;
+    }
+})
 
 
 
@@ -111,7 +114,7 @@ function decimal_binary(val){
     }
 
     console.log("---" + total+ "---")
-    answer.innerHTML = total
+    h2_1.innerHTML = total
 
 
 }
@@ -142,7 +145,7 @@ function decimal_octal(val){
         total = (test%8).toString() + total.toString()
     }
     console.log("---" + total+ "---")
-    answer.innerHTML = total
+    h2_2.innerHTML = total
 
 }
 
@@ -251,7 +254,7 @@ function decimal_hexa(val){
         }
     }
     console.log("---" + total+ "---")
-    answer.innerHTML = total
+    h2_4.innerHTML = total
 
 }
 
@@ -280,7 +283,7 @@ function binary_decimal(val){
     }
 
     console.log("---" + total + "---")
-    answer.innerHTML = total
+    h2_3.innerHTML = total
 
 
 
@@ -342,7 +345,7 @@ function binary_octal(val){
     }
 
     console.log("---" + total_final + "---")
-    answer.innerHTML = total_final
+    h2_2.innerHTML = total_final
 
 
 }
@@ -429,7 +432,7 @@ function binary_hexa(val){
     }
 
     console.log("---" + total_final + "---")
-    answer.innerHTML = total_final
+    h2_4.innerHTML = total_final
 
 
 }
@@ -440,12 +443,5 @@ function octal_binary(val){
     console.log("jgfghg"+test)
 }
 
-state()
-// deci_binary(243)
-// decimal_octal(512)
-// decimal_hexa(1174372330)
-
-// binary_decimal("1010101011")
-// binary_octal("1001101")
-// binary_hexa("100110111001")
-octal_binary(273)
+state_()
+console.log("asas")
