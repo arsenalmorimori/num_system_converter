@@ -78,8 +78,12 @@ button_.addEventListener("click", function(){
             label_16.innerHTML = "16"
         break;
         case 4:
-            binary_decimal(input_2.value)
-            span.innerHTML = "10"
+            hexa_decimal(input_2.value)
+            hexa_binary(input_2.value,0)
+            hexa_octal(input_2.value)
+            label_10.innerHTML = "10"
+            label_2.innerHTML = "2"
+            label_8.innerHTML = "8"
         break;
     }
 })
@@ -289,7 +293,7 @@ function binary_decimal(val){
 
 }
 
-function binary_octal(val){
+function binary_octal(val,action){
     console.log("-----------------------")
     // console.log(2 ** 3)
     
@@ -345,7 +349,7 @@ function binary_octal(val){
     }
 
     console.log("---" + total_final + "---")
-    h2_2.innerHTML = total_final
+    h2_3.innerHTML = total_final
 
 
 }
@@ -433,14 +437,177 @@ function binary_hexa(val){
 
     console.log("---" + total_final + "---")
     h2_4.innerHTML = total_final
+    
 
 
 }
 
-function octal_binary(val){
-    // decimal_binary(val)
+
+function hexa_decimal(val){
     let test = val
-    console.log("jgfghg"+test)
+    let len = test.length
+    let total = 0
+    let power = 0
+        console.log("helo : " + len)
+    for(let a = (len-1) ; a > -1 ; a--){
+        console.log(test[a])
+        switch (test[a]){
+            case "A":
+                total = total + (10 * (16**power))
+                power++
+            break;
+            case "B":
+                total = total + (11 * (16**power))
+                power++
+            break;
+            case "C":
+                total = total + (12 * (16**power))
+                power++
+            break;
+            case "D":
+                total = total + (13 * (16**power))
+                power++
+            break;
+            case "E":
+                total = total + (14 * (16**power))
+                power++
+            break;
+            case "F":
+                total = total + (15 * (16**power))
+                power++
+            break;
+            case "1":
+                total = total + (1 * (16**power))
+                power++
+            break;
+            case "2":
+                total = total + (2 * (16**power))
+                power++
+            break;
+            case "3":
+                total = total + (3 * (16**power))
+                power++
+            break;
+            case "4":
+                total = total + (4 * (16**power))
+                power++
+            break;
+            case "5":
+                total = total + (5 * (16**power))
+                power++
+            break;
+            case "6":
+                total = total + (6 * (16**power))
+                power++
+            break;
+            case "7":
+                total = total + (7 * (16**power))
+                power++
+            break;
+            case "8":
+                total = total + (8 * (16**power))
+                power++
+            break;
+            case "9":
+                total = total + (9 * (16**power))
+                power++
+            break;
+            default:
+                h2_1.innerHTML = "error"
+                return
+        }
+        h2_1.innerHTML = total
+    }
+}
+function hexa_binary(val,action){
+    let test = val
+    let len = test.length
+    let total = 0
+    let power = 0
+        console.log("helo : " + len)
+    for(let a = 0 ; a < len; a++){
+        console.log(test[a])
+        switch (test[a]){
+            case "A":
+                total = total + "1010"
+                power++
+            break;
+            case "B":
+                total = total + "1011"
+                power++
+            break;
+            case "C":
+                total = total + "1100"
+                power++
+            break;
+            case "D":
+                total = total + "1101"
+                power++
+            break;
+            case "E":
+                total = total + "1110"
+                power++
+            break;
+            case "F":
+                total = total + "1111"
+                power++
+            break;
+            case "1":
+                total = total + "0001"
+                power++
+            break;
+            case "2":
+                total = total + "0010"
+                power++
+            break;
+            case "3":
+                total = total + "0011"
+                power++
+            break;
+            case "4":
+                total = total + "0100"
+                power++
+            break;
+            case "5":
+                total = total + "0101"
+                power++
+            break;
+            case "6":
+                total = total + "0110"
+                power++
+            break;
+            case "7":
+                total = total + "0111"
+                power++
+            break;
+            case "8":
+                total = total + "1000"
+                power++
+            break;
+            case "9":
+                total = total + "1001"
+                power++
+            break;
+            default:
+                h2_2.innerHTML = "error"
+                return
+        }
+
+
+    }
+
+    
+        if(action == 1){
+            return total
+        }
+
+        h2_2.innerHTML = total
+}
+function hexa_octal(val){
+    let test = val
+    let toBinary = hexa_binary(test,1)
+    console.log("34567890987---------------"+ toBinary)
+    binary_octal(toBinary)
 }
 
 state_()
