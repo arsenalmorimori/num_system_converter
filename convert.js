@@ -610,5 +610,24 @@ function hexa_octal(val){
     binary_octal(toBinary)
 }
 
+
+
+
+function octal_decimal(val){
+    let test = val
+    let len = test.length
+    let total = 0
+    let power = 0
+        console.log("helo : " + len)
+    for(let a = (len-1) ; a > -1 ; a--){
+        console.log(test[a])
+        total = total + ( * (8**power))
+        power++
+        
+    }
+        h2_1.innerHTML = total
+
+}
+
 state_()
 console.log("asas")
