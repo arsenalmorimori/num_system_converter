@@ -621,7 +621,7 @@ function octal_decimal(val){
         console.log("helo : " + len)
     for(let a = (len-1) ; a > -1 ; a--){
         console.log(test[a])
-        total = total + ( * (8**power))
+        total = total + ( test[a]* (8**power))
         power++
         
     }
@@ -629,5 +629,57 @@ function octal_decimal(val){
 
 }
 
+function octal_binary(val,action){
+    let test = val
+    let len = test.length
+    let total = 0
+        console.log("helo : " + len)
+    for(let a = 0 ; a < len; a++){
+        console.log(test[a])
+        switch (test[a]){
+           
+            case "1":
+                total = total + "001"
+            break;
+            case "2":
+                total = total + "010"
+            break;
+            case "3":
+                total = total + "011"
+            break;
+            case "4":
+                total = total + "100"
+            break;
+            case "5":
+                total = total + "101"
+            break;
+            case "6":
+                total = total + "110"
+            break;
+            case "7":
+                total = total + "111"
+            break;
+            default:
+                h2_2.innerHTML = "error"
+                return
+        }
+
+
+    }
+
+        console.log(total)
+        if(action == 1){
+            return total
+        }
+
+        h2_2.innerHTML = total
+}
+function octal_hexa(val){
+    let test = val.toString
+    let toBinary = octal_binary(test)
+    binary_hexa(toBinary)
+}
+
 state_()
 console.log("asas")
+octal_hexa(247)
