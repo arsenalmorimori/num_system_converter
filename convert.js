@@ -6,9 +6,9 @@ const  input_2 = document.getElementsByTagName("input")[1]
 const  button_ = document.getElementsByClassName("convert_btn")[0]
 const  answer = document.getElementsByTagName("h2")[0]
 const  span = document.getElementsByTagName("span")[0]
-const  label_2 = document.getElementsByClassName("label")[0]
-const  label_8 = document.getElementsByClassName("label")[1]
-const  label_10 = document.getElementsByClassName("label")[2]
+const  label_2 = document.getElementsByClassName("label")[1]
+const  label_8 = document.getElementsByClassName("label")[2]
+const  label_10 = document.getElementsByClassName("label")[0]
 const  label_16 = document.getElementsByClassName("label")[3]
 const  ans_con1 = document.getElementsByClassName("ans_con")[0]
 const  ans_con2 = document.getElementsByClassName("ans_con")[1]
@@ -27,19 +27,19 @@ function state_(){
             console.log("binary")
             h1.innerHTML = "Binary"
             input_2.style.display = "none"
-            ans_con1.style.display = "none"
+            ans_con2.style.display = "none"
         break;
         case 2:
             console.log("octal")
             h1.innerHTML = "Octal"
             input_2.style.display = "none"
-            ans_con2.style.display = "none"
+            ans_con3.style.display = "none"
         break;
         case 3:
             console.log("decimal")
             h1.innerHTML = "Decimal"
             input_2.style.display = "none"
-            ans_con3.style.display = "none"
+            ans_con1.style.display = "none"
         break;
         case 4:
             console.log("hexadecimal")
@@ -66,8 +66,12 @@ button_.addEventListener("click", function(){
             label_16.innerHTML = "16"
         break;
         case 2:
-            decimal_octal(input_1.value)
-            label_8.innerHTML = "8"
+            octal_binary(input_1.value,0)
+            octal_decimal(input_1.value)
+            octal_hexa(input_1.value)
+            label_2.innerHTML = "2"
+            label_10.innerHTML = "10"
+            label_16.innerHTML = "16"
         break;
         case 3:
             decimal_binary(input_1.value)
@@ -118,7 +122,7 @@ function decimal_binary(val){
     }
 
     console.log("---" + total+ "---")
-    h2_1.innerHTML = total
+    h2_2.innerHTML = total
 
 
 }
@@ -149,7 +153,7 @@ function decimal_octal(val){
         total = (test%8).toString() + total.toString()
     }
     console.log("---" + total+ "---")
-    h2_2.innerHTML = total
+    h2_3.innerHTML = total
 
 }
 
@@ -287,7 +291,7 @@ function binary_decimal(val){
     }
 
     console.log("---" + total + "---")
-    h2_3.innerHTML = total
+    h2_1.innerHTML = total
 
 
 
@@ -522,7 +526,7 @@ function hexa_decimal(val){
 function hexa_binary(val,action){
     let test = val
     let len = test.length
-    let total = 0
+    let total = ""
     let power = 0
         console.log("helo : " + len)
     for(let a = 0 ; a < len; a++){
@@ -632,7 +636,7 @@ function octal_decimal(val){
 function octal_binary(val,action){
     let test = val
     let len = test.length
-    let total = 0
+    let total = ""
         console.log("helo : " + len)
     for(let a = 0 ; a < len; a++){
         console.log(test[a])
@@ -675,11 +679,15 @@ function octal_binary(val,action){
         h2_2.innerHTML = total
 }
 function octal_hexa(val){
-    let test = val.toString
-    let toBinary = octal_binary(test)
+    let test = val
+    let toBinary = octal_binary(test,1)
+    console.log("toBinary --------- " + toBinary)
     binary_hexa(toBinary)
 }
 
 state_()
 console.log("asas")
-octal_hexa(247)
+// octal_hexa("5456")
+// octal_hexa("247")
+// octal_binary("5456")
+// binary_hexa("101100101110")
